@@ -10,10 +10,10 @@ const countDown = setInterval(() => {
     
     if (diff_ms > 0) {
         // times left
-        daysElement.innerText = Math.floor(diff_ms / day_ms);
-        hoursElement.innerText = Math.floor((diff_ms % day_ms) / hour_ms);
-        minutesElement.innerText = Math.floor((diff_ms % hour_ms) / minute_ms);
-        secondsElement.innerText = Math.floor((diff_ms % minute_ms) / second_ms);
+        daysElement.innerText = Math.floor(diff_ms / day_ms).toString().padStart(2, '0');
+        hoursElement.innerText = Math.floor((diff_ms % day_ms) / hour_ms).toString().padStart(2, '0');
+        minutesElement.innerText = Math.floor((diff_ms % hour_ms) / minute_ms).toString().padStart(2, '0');
+        secondsElement.innerText = Math.floor((diff_ms % minute_ms) / second_ms).toString().padStart(2, '0');
     } else {
         clearInterval (countDown);
     }
