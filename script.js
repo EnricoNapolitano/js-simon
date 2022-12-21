@@ -4,7 +4,7 @@ Ogni secondo il nostro countdown dovrà scalare fino alla mezzanotte del 25 dice
 */
 
 //* FUNCTION
-const countDown = setInterval(() => {
+const getTimeLeftToChristmas = () => {
     const now_ms = new Date().getTime(); // milliseconds from 1st Jan 1970 till now
     const diff_ms = christmas2022_ms - now_ms; // difference between target date and present time
     
@@ -17,7 +17,7 @@ const countDown = setInterval(() => {
     } else {
         clearInterval (countDown);
     }
-}, 1000);
+};
 
 //* DOM'S ELEMENTS
 const daysElement = document.getElementById('days');
@@ -33,3 +33,5 @@ const second_ms = 1000;
 const minute_ms = second_ms * 60;
 const hour_ms = minute_ms * 60;
 const day_ms = hour_ms * 24;
+
+setInterval(getTimeLeftToChristmas, 1000);
